@@ -1,40 +1,45 @@
 package com.company;
-import java.io.*;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int a = 0 ;
         String name ;
-        PeopleAndAccounts people = new PeopleAndAccounts();
+        MyEntry2 myEntry = new MyEntry2();
         Scanner scan = new Scanner(System.in);
+
         while (true) {
             switch (a) {
                 case 0:
-                    System.out.println("1 - add person");
-                    System.out.println("2 - add account to person");
-                    System.out.println("3 - watch people and accounts");
-                    System.out.println("4 - remove person");
-                    System.out.println("5 - remove account");
+                    System.out.println("1 - add object");
+                    System.out.println("2 - watch list");
+                    System.out.println("3 - watch keys");
+                    System.out.println("4 - watch all info");
+                    System.out.println("5 - remove something by value");
+                    System.out.println("6 - remove something by key");
                     a = scan.nextInt();
                     break;
                 case 1:
-                    people.addPeople();
+                    myEntry.addObject();
                     a = 0;
                     break;
                 case 2:
-                    people.accountToPeople();
+                    myEntry.watchList();
                     a = 0;
                     break;
                 case 3:
-                    people.watchPeople();
+                    myEntry.watchKeys();
                     a = 0;
                     break;
                 case 4:
-                    people.removePeople();
+                    myEntry.watchAll();
                     a = 0;
                     break;
                 case 5:
-                    people.deleteAccount();
+                    myEntry.removeByValue();
+                    a = 0;
+                    break;
+                case 6:
+                    myEntry.removeByKey();
                     a = 0;
                     break;
             }
